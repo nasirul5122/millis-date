@@ -1,116 +1,76 @@
 # Millis Date
 
-**Millis Date** is a Laravel helper package for working with dates, time, and milliseconds.  
-It provides utility methods for date formatting, conversion, ranges, and timezone‑aware output.
-
 [![Packagist](https://img.shields.io/packagist/v/rakibhamid/millis-date.svg)](https://packagist.org/packages/rakibhamid/millis-date)
-[![PHP from Packagist](https://img.shields.io/packagist/php-v/rakibhamid/millis-date)](https://packagist.org/packages/rakibhamid/millis-date)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+**Millis Date** is a Laravel helper package for working with dates, time, and milliseconds.  
+It provides utility methods for date formatting, conversion, and calculations in various formats and timezones.
 
 ---
 
 ## 📦 Installation
 
+You can install the package via Composer:
+
 ```bash
 composer require rakibhamid/millis-date
-```
-
-If auto-discovery is disabled (Laravel 7/8):
-
-```php
-// config/app.php
-'providers' => [
-    RakibHamid\MillisDate\MillisDateServiceProvider::class,
-],
-'aliases' => [
-    'MillisDate' => RakibHamid\MillisDate\Facades\MillisDate::class,
-],
 ```
 
 ---
 
 ## 🚀 Usage
 
+### Import Facade
+
 ```php
 use RakibHamid\MillisDate\Facades\MillisDate;
-
-// Date + time -> milliseconds
-$ms = MillisDate::convertDateTimeToMillisecond('25/12/2025', '14:30:00');
-
-// Milliseconds -> date / datetime
-$date = MillisDate::millisecondToDate(1766653800000);                 // 2025-12-25
-$dt   = MillisDate::millisecondToDateTime(1766653800000);             // 2025-12-25 14:30:00
-$tzdt = MillisDate::millisecondToDateTimeWithTimezone(1766653800000, 'Y-m-d H:i:s', 'Asia/Dhaka');
-
-// Range of dates
-$days = MillisDate::getDatesFromRange('2025-01-01', '2025-01-05');
-
-// Human readable elapsed
-$ago = MillisDate::getTimeElapsedFromMilliseconds(7200000); // "2 hours 0 minutes ago"
 ```
 
-### More helpers
-- `formatDate('15/08/2025', 'd/m/Y', 'Y-m-d')`
-- `getMonthName(5)` → `May`
-- `millisecondToMonthYear(…)` → `['month'=>12,'month_name'=>'December','year'=>2025]`
-- `getWeeksInRange('2025-01-01','2025-02-15')` → array of week blocks
+### Examples
+
+#### Convert DateTime to Milliseconds
+```php
+$milliseconds = MillisDate::convertDateTimeToMillisecond('2025-08-11', '14:30:00');
+```
+
+#### Convert Milliseconds to DateTime
+```php
+$dateTime = MillisDate::millisecondToDateTime(1691765400000);
+```
+
+#### Get Dates in Range
+```php
+$dates = MillisDate::getDatesFromRange('2025-08-01', '2025-08-10');
+```
 
 ---
 
-## 📚 Available Methods (Facade)
+## 📚 Features
 
-- `formatDate($date, $input_format, $output_format)`
-- `formatDateWithTime($date, $input_format, $output_format)`
-- `getMonthYear($month_year, $delimiter)`
-- `getMonthName($month_id)`
-- `convertDateToEnglish($bn_date)`
-- `convertDateTimeToMillisecond($date, $time, $timezone = null)`
-- `convertCurrentDateTimeToMillisecond()`
-- `getMonthStartDate($month, $year)`
-- `getMonthEndDate($month, $year)`
-- `getNoOfDaysInMonth($month, $year)`
-- `findNthDate($date, $n, $output_format)`
-- `findPreviousDate($date, $output_format)`
-- `getTimeElapsedFromMilliseconds($millisecond_time)`
-- `getMonth($date, $interval)`
-- `getDatesFromRange($start, $end, $format)`
-- `getMonthList($fromMonth, $toMonth, $output_format)`
-- `getYearList($fromMonth, $toMonth)`
-- `millisecondToDateTime($millisecond, $format)`
-- `millisecondToDateTimeWithTimezone($millisecond, $format, $timezone)`
-- `millisecondToDate($millisecond, $format)`
-- `getIntervalBetweenDates($start, $end)`
-- `getWeeksInRange($start_date, $end_date)`
-- `getWeekDateRange($date, $weekNumber, $dateFormat)`
-- `millisecondToMonthYear($millisecond)`
-- `calculateAge($dob)`
-- `getEpochTimeRange($date, $type, $timezone)`
-- `getDayCountOfAmonth($dateString)`
-- `getMonthNameAndDate($givenDate, $type)`
-- `calculateAgeFromBirthYear($dob)`
-- `getWeekDatesFromRange($startDate, $endDate, $weekdays)`
-- `getDatesInIntervals($startDate, $endDate, $interval)`
-- `getWeekdayAbbreviations($weekday_numbers)`
+- Convert between date/time and milliseconds.
+- Format dates into custom formats.
+- Get month/year lists.
+- Find dates in a range.
+- Timezone-aware date conversions.
+- And more…
 
 ---
 
 ## 🛠 Requirements
-- **PHP:** 7.2.5+
-- **Laravel:** 7.x – 11.x
 
----
-
-## 🧑‍💻 Maintainer
-**Rakib Ibna Hamid Chowdhury**  
-📧 [rakibibnahamidchowdhury@gmail.com](mailto:rakibibnahamidchowdhury@gmail.com)
-
----
-
-## 🤝 Support
-- Open an issue on GitHub: https://github.com/rakib-chowdhury/millis-date/issues
-- Or email the maintainer
+- **PHP**: 7.0 or higher
+- **Laravel**: 7.x or higher
 
 ---
 
 ## 📄 License
+
 This package is open-sourced software licensed under the [MIT license](LICENSE).
+
+---
+
+## 🤝 Support
+
+For issues, please open a GitHub issue in the [repository](https://github.com/rakib-chowdhury/millis-date).  
+View the package on Packagist: [rakibhamid/millis-date](https://packagist.org/packages/rakibhamid/millis-date)  
+Maintainer: **Rakib Ibna Hamid Chowdhury** – rakibibnahamidchowdhury@gmail.com
