@@ -1,0 +1,4 @@
+/tests export-ignore
+/.github export-ignore
+/CHANGELOG.md export-ignore
+/README.md export-ignore

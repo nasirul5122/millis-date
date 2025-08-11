@@ -1,0 +1,32 @@
+{
+    "name": "rakibhamid/millis-date",
+    "description": "Laravel utilities for milliseconds ↔ date conversions and date range helpers.",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^7.2.5|^8.0",
+        "illuminate/support": "^7.0|^8.0|^9.0|^10.0|^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "RakibHamid\\MillisDate\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "RakibHamid\\MillisDate\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "RakibHamid\\MillisDate\\MillisDateServiceProvider"
+            ],
+            "aliases": {
+                "MillisDate": "RakibHamid\\MillisDate\\Facades\\MillisDate"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
