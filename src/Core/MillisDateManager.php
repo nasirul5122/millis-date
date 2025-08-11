@@ -195,7 +195,7 @@ class MillisDateManager
     /**
      * Find the Nth date from the given date.
      *
-     * @param string $date          Base date.
+     * @param string $date          Base date (format: Y-m-d).
      * @param int    $n             Number of days ahead (0 for same day).
      * @param string $output_format Output format.
      * @return string
@@ -216,7 +216,7 @@ class MillisDateManager
     /**
      * Get the previous date from a given date.
      *
-     * @param string $date          Base date.
+     * @param string $date          Base date (format: Y-m-d).
      * @param string $output_format Output format.
      * @return string
      */
@@ -266,7 +266,7 @@ class MillisDateManager
     /**
      * Get month/year from a date minus an interval.
      *
-     * @param string $date     Date string.
+     * @param string $date     Date string (format: d/m/Y).
      * @param string $interval DateInterval spec string (e.g., 'P1M').
      * @return string
      */
@@ -283,8 +283,8 @@ class MillisDateManager
     /**
      * Get all dates between two dates.
      *
-     * @param string $start  Start date.
-     * @param string $end    End date.
+     * @param string $start  Start date (format: Y-m-d).
+     * @param string $end    End date (format: Y-m-d).
      * @param string $format Output format.
      * @return string[]
      */
@@ -307,11 +307,11 @@ class MillisDateManager
     }
 
     /**
-     * Get list of month names between two months.
+     * Get list of month names between two months in "Y-m" format.
      *
-     * @param string $fromMonth     Start month.
-     * @param string $toMonth       End month.
-     * @param string $output_format Output format.
+     * @param string $fromMonth     Start month (format: Y-m).
+     * @param string $toMonth       End month (format: Y-m).
+     * @param string $output_format Output format (default: Y-m).
      * @return string[]
      */
 
@@ -329,8 +329,8 @@ class MillisDateManager
     /**
      * Get list of years between two months.
      *
-     * @param string $fromMonth Start month.
-     * @param string $toMonth   End month.
+     * @param string $fromMonth Start month (format: Y-m).
+     * @param string $toMonth   End month (format: Y-m).
      * @return string[]
      */
 
